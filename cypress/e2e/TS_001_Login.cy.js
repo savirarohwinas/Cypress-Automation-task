@@ -10,8 +10,6 @@ describe("Scenario 1 - Login", () => {
     cy.contains("total pembelian").should("be.visible");
 
 
-    
-  
   });
 
   it("Negative case - Error message 'Kredensial yang Anda berikan salah' displayed.", () => {
