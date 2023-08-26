@@ -21,12 +21,12 @@ describe("Skenario 3 - Tambah Kategori", () => {
       cy.get('.css-1piskbq').contains('tambah').click(); 
       fillCategoryForm(validCategoryData);
       cy.get('.chakra-button').click();
-
       cy.contains("success").should("be.visible"); 
       cy.contains("item ditambahkan").should("be.visible");
-      cy.get('.chakra-toast .css-1xy7m1b [fill="currentColor"]').click();
+      cy.get('.chakra-toast .css-1xy7m1b [fill="currentColor"]').click()
+      cy.reload();
       cy.url().should("include", "/categories"); 
-      cy.contains(validCategoryData.nama, { timeout: 10000 }).should("be.visible");
+      cy.contains(validCategoryData.deskripsi, { timeout: 10000 }).should("be.visible");
     });
   
     it("Negative Add Category - Empty Name", () => {

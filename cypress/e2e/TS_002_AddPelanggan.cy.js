@@ -34,7 +34,8 @@ describe("Skenario 2 - Tambah Pelanggan", () => {
       cy.contains("success").should("be.visible"); 
       cy.contains("item ditambahkan").should("be.visible");
       cy.get('.chakra-toast .css-1xy7m1b [fill="currentColor"]').click();
-      cy.url().should("include", "/customers"); 
+      cy.url().should("include", "/customers");
+      cy.reload(); 
       cy.contains(validCustomerData.nama, { timeout: 10000 }).should("be.visible");
 
     });
